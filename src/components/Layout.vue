@@ -15,7 +15,9 @@
       </div>
     </div>
     <div class="container">
-      content
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
     <div class="app-foot">
       <p>2020-2030 Ningde Vocational And Technical College. All Rights Reserved.</p>
@@ -107,6 +109,7 @@ body {
 .app-head-inner img {
   width: 70px;
   margin-top: 10px;
+  margin-left: 15px;
 }
 .head-nav {
   float: right;
