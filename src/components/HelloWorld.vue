@@ -5,20 +5,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'HelloWorld',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js App',
-        htmlValue: '<h1>this is h1</h1>'
-      }
-    },
-    methods: {
-      click () {
-        this.$emit('childfn', this.msg)
-      }
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      htmlValue: '<h1>this is h1</h1>'
+    }
+  },
+  methods: {
+    click () {
+      this.$emit('childfn', this.msg)
     }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

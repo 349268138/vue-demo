@@ -28,15 +28,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'Register',
-    data () {
-      return {
-      }
-    },
-    methods: {
+export default {
+  name: 'Register',
+  data () {
+    return {
     }
+  },
+  methods: {
   }
+}
 </script>
 
 <style scoped>
