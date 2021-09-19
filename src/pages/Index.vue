@@ -18,7 +18,7 @@
         <h2>最新消息</h2>
           <ul>
             <li v-for="item in newsList" :key="item.id">
-              <a :href="item.url">{{ item.name }}</a>
+              <a :href="item.url" class="news-item">{{ item.name }}</a>
             </li>
           </ul>
       </div>
@@ -42,82 +42,36 @@
 <script>
 export default {
   name: 'Index',
+  created () {
+    this.$http.get('/api/newsList').then(function (res) {
+      this.newsList = res.data
+      console.log(res.data)
+    }, function (err) {
+      console.log(err)
+    })
+    this.$http.get('/api/productList').then(function (res) {
+      this.productList = res.data
+      console.log(res.data)
+    }, function (err) {
+      console.log(err)
+    })
+    this.$http.get('/api/boardList').then(function (res) {
+      this.boardList = res.data
+      console.log(res.data)
+    }, function (err) {
+      console.log(err)
+    })
+    // this.$http.post('/api/modify', {userId: '1'}).then(function (data) {
+    //   console.log(data)
+    // }, function (err) {
+    //   console.log(err)
+    // })
+  },
   data () {
     return {
-      productList: {
-        pc: {
-          id: 1,
-          title: 'PC产品',
-          list: [
-            {
-              id: 1,
-              name: '数据统计',
-              url: 'http://starcraft.com',
-              hot: true
-            },
-            {
-              id: 2,
-              name: '数据预测',
-              url: 'http://warcraft.com'
-            }
-          ]
-        },
-        app: {
-          id: 2,
-          title: '手机应用类',
-          list: [
-            {
-              id: 3,
-              name: '91助手',
-              url: 'http://weixin.com',
-              hot: true
-            },
-            {
-              id: 4,
-              name: '产品助手',
-              url: 'http://twitter.com'
-            }
-          ]
-        }
-      },
-      newsList: [
-        {
-          id: 1,
-          name: '第64届人气之星结果公布（领奖啦！',
-          url: 'http://starcraft.com'
-        },
-        {
-          id: 2,
-          name: '出租一个月---合院套三主卧',
-          url: 'http://warcraft.com'
-        }
-      ],
-      boardList: [
-        {
-          id: 1,
-          title: '开放产品',
-          imageType: 'car',
-          description: '开放产品是一款开放产品'
-        },
-        {
-          id: 2,
-          title: '品牌营销',
-          imageType: 'loud',
-          description: '品牌营销帮助你的产品更好地找到定位'
-        },
-        {
-          id: 3,
-          title: '开放产品',
-          imageType: 'earth',
-          description: '开放产品是一款开放产品'
-        },
-        {
-          id: 4,
-          title: '品牌营销',
-          imageType: 'hill',
-          description: '品牌营销帮助你的产品更好地找到定位'
-        }
-      ]
+      productList: {},
+      newsList: [],
+      boardList: []
     }
   }
 }
@@ -210,11 +164,14 @@ export default {
   background: red;
   color: #fff;
 }
-.new-item {
+.news-item {
   display: inline-block;
   width: 230px;
+  /* 超出部分隐藏 */
   overflow: hidden;
+  /* 超出部分为省略号 */
   text-overflow: ellipsis;
+  /* 不允许换行 */
   white-space: nowrap;
 }
 </style>
