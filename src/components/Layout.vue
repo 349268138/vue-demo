@@ -5,11 +5,15 @@
         <img src="../assets/logn.png">
         <div class="head-nav">
           <ul class="nav-list">
-            <li>登录</li>
-            <li class="nav-pile">|</li>
-            <li>注册</li>
-            <li class="nav-pile">|</li>
-            <li>关于</li>
+            <li>{{ userName }}</li>
+            <li class="nav-pile" v-if="userName !== ''">|</li>
+            <li class="nav-pile" v-if="userName !== ''" @click="userName = ''">退出</li>
+            <li class="nav-pile" v-if="userName !== ''">|</li>
+            <li v-on:click="showDialogWindow('isShowLoginDialogWindow')" v-if="userName === ''">登录</li>
+            <li class="nav-pile" v-if="userName === ''">|</li>
+            <li @click="showDialogWindow('isShowRegisterDialogWindow')" v-if="userName === ''">注册</li>
+            <li class="nav-pile" v-if="userName === ''">|</li>
+            <li @click="showDialogWindow('isShowAboutDialogWindow')">关于</li>
           </ul>
         </div>
       </div>
@@ -22,15 +26,55 @@
     <div class="app-foot">
       <p>2020-2030 Ningde Vocational And Technical College. All Rights Reserved.</p>
     </div>
+    <dialog-window :is-show="isShowLoginDialogWindow" @dialog-window-close="closeDialogWindow('isShowLoginDialogWindow')">
+      <login @login-success="onSuccessLogin"></login>
+    </dialog-window>
+    <dialog-window :is-show="isShowRegisterDialogWindow" @dialog-window-close="closeDialogWindow('isShowRegisterDialogWindow')">
+      <register @register-success="onSuccessRegister"></register>
+    </dialog-window>
+    <dialog-window :is-show="isShowAboutDialogWindow" @dialog-window-close="closeDialogWindow('isShowAboutDialogWindow')">
+      <p>hello about window</p>
+    </dialog-window>
   </div>
 </template>
 
 <script>
+import DialogWindow from './base/DialogWindow'
+import Login from './Login'
+import Register from './Register'
+
 export default {
   name: 'Layout',
   data () {
     return {
-      msg: 'Layout'
+      msg: 'Layout',
+      userName: '',
+      isShowLoginDialogWindow: false,
+      isShowRegisterDialogWindow: false,
+      isShowAboutDialogWindow: false
+    }
+  },
+  components: {
+    DialogWindow,
+    Login,
+    Register
+  },
+  methods: {
+    showDialogWindow (attr) {
+      this[attr] = true
+    },
+    closeDialogWindow (attr) {
+      this[attr] = false
+    },
+    onSuccessLogin (data) {
+      this.userName = data.userName
+      this.closeDialogWindow('isShowLoginDialogWindow')
+      console.log('login success: ' + data)
+    },
+    onSuccessRegister (data) {
+      this.userName = data.userName
+      this.closeDialogWindow('isShowRegisterDialogWindow')
+      console.log('register success: ' + data)
     }
   }
 }
