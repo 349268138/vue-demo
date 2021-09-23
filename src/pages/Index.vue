@@ -46,19 +46,19 @@ import SlideShow from '../components/SlideShow'
 export default {
   name: 'Index',
   created () {
-    this.$http.get('/api/newsList').then(function (res) {
+    this.$http.get('/api/wangjinping/newsList').then(function (res) {
       this.newsList = res.data
       console.log(res.data)
     }, function (err) {
       console.log(err)
     })
-    this.$http.get('/api/productList').then(function (res) {
+    this.$http.get('/api/wangjinping/productList').then(function (res) {
       this.productList = res.data
       console.log(res.data)
     }, function (err) {
       console.log(err)
     })
-    this.$http.get('/api/boardList').then(function (res) {
+    this.$http.get('/api/wangjinping/boardList').then(function (res) {
       this.boardList = res.data
       console.log(res.data)
     }, function (err) {
