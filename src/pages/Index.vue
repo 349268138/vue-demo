@@ -133,16 +133,16 @@ export default {
   min-height: 125px;
   padding-left: 120px;
 }
-.index-board-car .index-board-item-inner{
+.index-board-type-1 .index-board-item-inner{
   background: url(../assets/images/1.png) no-repeat;
 }
-.index-board-loud .index-board-item-inner{
+.index-board-type-2 .index-board-item-inner{
   background: url(../assets/images/2.png) no-repeat;
 }
-.index-board-earth .index-board-item-inner{
+.index-board-type-3 .index-board-item-inner{
   background: url(../assets/images/3.png) no-repeat;
 }
-.index-board-hill .index-board-item-inner{
+.index-board-type-4 .index-board-item-inner{
   background: url(../assets/images/4.png) no-repeat;
 }
 .index-board-item h2 {
