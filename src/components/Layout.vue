@@ -33,7 +33,7 @@
       <register @register-success="onSuccessRegister"></register>
     </dialog-window>
     <dialog-window :is-show="isShowAboutDialogWindow" @dialog-window-close="closeDialogWindow('isShowAboutDialogWindow')">
-      <p>hello about window</p>
+      <p>宁职前端培训机构 - 一站式前端人才基地，专注IT职业教育前端人才服务，已开设***大课程体系，覆盖IT/设计/运营三大方向。全国建立了***多家培训中心，一地学习全国就业！</p>
     </dialog-window>
   </div>
 </template>
