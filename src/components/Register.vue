@@ -107,7 +107,7 @@ export default {
       if (!this.userNameErrors.status || !this.passwordErrors.status || !this.passwordDoubleCheckErrors.status) {
         this.errorText = '账号或密码校验未通过'
       } else {
-        this.$http.get('/api/wangjinping/register').then((res) => {
+        this.$http.get('/api/register').then((res) => {
           this.errorText = ''
           this.$emit('register-success', res.data)
         }, (error) => {

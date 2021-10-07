@@ -80,7 +80,7 @@ export default {
       if (!this.userNameErrors.status || !this.passwordErrors.status) {
         this.errorText = '账号或密码校验未通过'
       } else {
-        this.$http.get('/api/wangjinping/login').then((res) => {
+        this.$http.get('/api/login').then((res) => {
           this.errorText = ''
           this.$emit('login-success', res.data)
         }, (error) => {
