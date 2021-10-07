@@ -96,25 +96,25 @@ export default {
         {
           id: 1,
           title: '开放产品',
-          imageType: 'car',
+          imageType: 'type-1',
           description: '开放产品是一款开放产品'
         },
         {
           id: 2,
           title: '品牌营销',
-          imageType: 'loud',
+          imageType: 'type-2',
           description: '品牌营销帮助你的产品更好地找到定位'
         },
         {
           id: 3,
           title: '开放产品',
-          imageType: 'earth',
+          imageType: 'type-3',
           description: '开放产品是一款开放产品'
         },
         {
           id: 4,
           title: '品牌营销',
-          imageType: 'hill',
+          imageType: 'type-4',
           description: '品牌营销帮助你的产品更好地找到定位'
         }
       ]
@@ -179,16 +179,16 @@ export default {
   min-height: 125px;
   padding-left: 120px;
 }
-.index-board-car .index-board-item-inner{
+.index-board-type-1 .index-board-item-inner{
   background: url(../assets/images/1.png) no-repeat;
 }
-.index-board-loud .index-board-item-inner{
+.index-board-type-2 .index-board-item-inner{
   background: url(../assets/images/2.png) no-repeat;
 }
-.index-board-earth .index-board-item-inner{
+.index-board-type-3 .index-board-item-inner{
   background: url(../assets/images/3.png) no-repeat;
 }
-.index-board-hill .index-board-item-inner{
+.index-board-type-4 .index-board-item-inner{
   background: url(../assets/images/4.png) no-repeat;
 }
 .index-board-item h2 {
