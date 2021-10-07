@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'https://getman.cn/mock/',
+        target: 'https://www.fastmock.site/mock/afa81c26867d0dabf998de5cf2dc9756/fe-training-web',
         changeOrigin: true,
         secure: false,
         pathRewrite: {
