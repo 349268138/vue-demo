@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import RouterComp from './components/RouterComp'
 import router from './router'
+import store from './store'
+// import store from './store/indexModule'
 
 Vue.config.productionTip = false
 
@@ -10,6 +12,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { RouterComp },
   template: '<RouterComp/>'
 })
