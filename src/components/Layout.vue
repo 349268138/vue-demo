@@ -83,7 +83,6 @@ export default {
 </script>
 
 <style>
-/* http://meyerweb.com/eric/tools/css/reset/  */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -127,7 +126,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 a {
   color: inherit;
   text-decoration: none;
@@ -153,9 +151,8 @@ body {
   float: left;
 }
 .app-head-inner img {
-  width: 70px;
-  margin-top: 10px;
-  margin-left: 15px;
+  width: 50px;
+  margin-top: 20px;
 }
 .head-nav {
   float: right;

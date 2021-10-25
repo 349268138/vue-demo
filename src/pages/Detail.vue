@@ -9,11 +9,11 @@
           </router-link>
         </ul>
       </div>
-      <div class="detail-right">
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
-      </div>
+    </div>
+    <div class="detail-right">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -27,22 +27,29 @@ export default {
         {
           id: 1,
           name: 'Vue培训',
-          url: 'https://cn.vuejs.org/',
-          path: 'vue',
-          icon: require('../assets/images/1.png'),
-          hot: true
+          path: 'vue'
         },
         {
           id: 2,
           name: 'React培训',
-          path: 'react',
-          icon: require('../assets/images/2.png'),
-          url: 'https://www.runoob.com/react/react-tutorial.html'
+          path: 'react'
+        },
+        {
+          id: 3,
+          name: 'Angalar培训',
+          path: 'angalar'
+        },
+        {
+          id: 4,
+          name: '其它培训',
+          path: 'other'
         }
       ],
       imgMap: {
         '/detail/vue': require('../assets/images/1.png'),
-        '/detail/react': require('../assets/images/2.png')
+        '/detail/react': require('../assets/images/2.png'),
+        '/detail/angalar': require('../assets/images/client.jpg'),
+        '/detail/other': require('../assets/images/web.jpg')
       }
     }
   },

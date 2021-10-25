@@ -1,12 +1,12 @@
 <template>
   <div>
-    React页面开发，待续……
+    其它页面开发，待续……
   </div>
 </template>
 
 <script>
 export default {
-  name: 'React',
+  name: 'Other',
   data () {
     return {
     }

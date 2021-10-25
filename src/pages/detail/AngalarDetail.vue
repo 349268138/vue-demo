@@ -1,12 +1,12 @@
 <template>
   <div>
-    React页面开发，待续……
+    Angalar页面开发，待续……
   </div>
 </template>
 
 <script>
 export default {
-  name: 'React',
+  name: 'Angalar',
   data () {
     return {
     }
